@@ -1,0 +1,21 @@
+{
+  "name": "resonate-crowdfund-player",
+  "homepage": "https://github.com/resonatecoop/resonate-crowdfund-player",
+  "authors": [
+    "Marie <marie.gauthier63@gmail.com>"
+  ],
+  "description": "Basic player widget for the Resonate homepage for duration of the crowd campaign",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "amplitude": "~2.0.0"
+  }
+}
