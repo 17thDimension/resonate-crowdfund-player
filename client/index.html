@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resonate Crowdfunding Player</title>
+  <link type="text/css" rel="stylesheet" href="./css/player.css">
+  <script type="text/javascript" src="./../bower_components/amplitude/js/amplitude.js"></script>
+</head>
+<body>
+  <div id="player-container">
+    <!-- Track Currently playing -->
+    <div id="header">
+      <img class="current-cover amplitude-play-pause amplitude-paused"
+            amplitude-song-info="cover"
+            amplitude-main-play-pause="true"/>
+      <div class="current-song-meta">
+        <div class="white-text current-artist-name" amplitude-song-info="artist"></div>
+        <div class="white-text current-song-name" amplitude-song-info="name"></div>
+      </div>
+      <div class="right-header">
+        <a class="resonate-link">( )</a>
+        <div class="amplitude-shuffle"></div>
+      </div>
+    </div>
+    <div id="playlist-container">
+      <!-- Previous/Next button and currently playing track time visualizations -->
+      <div id="controls">
+        <div class="control-button amplitude-next"></div>
+        <div class="control-button amplitude-prev"></div>
+        <div class="amplitude-song-time-visualization" amplitude-single-song-time-visualization="true"></div>
+      </div>
+      <!-- List of tracks in playlist -->
+      <div id="playlist">
+        <!-- Playlist item template -->
+        <div id="playlist-item-template" class="playlist-item">
+          <img class="amplitude-play-pause amplitude-paused song-cover"  amplitude-song-index="0"/>
+          <div class="playlist-item-info">
+            <div class="grey-text song-number"></div>
+            <div class="song-meta">
+              <div class="grey-text artist-name"></div>
+              <div class="white-text song-name"></div>
+            </div>
+            <span class="amplitude-duration-minutes"></span><span class="amplitude-duration-seconds"></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="grey-text res-nate">res(  )nate</div>
+      <div class="fair-music-streaming">#fairmusicstreaming</div>
+    </div>
+  </div>
+  <script type="text/javascript" src="./js/player.js"></script>
+</body>
+</html>

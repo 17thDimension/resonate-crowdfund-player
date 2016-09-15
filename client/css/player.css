@@ -1,0 +1,176 @@
+/* General & declarations */
+
+@font-face {
+  font-family: averta;
+  src: url('./../assets/fonts/AvertaDemo-Regular.otf');
+}
+
+:root {
+  --light-grey: #d5dada;
+  --medium-grey: #414141;
+  --white: #ffffff;
+  --green: #54eb80;
+  --yellow: #f6fdac;
+  --purple: #97a7dc;
+  --dark-grey: #222222;
+}
+
+body {
+  font-family: averta, sans-serif;
+}
+
+#player-container {
+  background-color: var(--medium-grey);
+  width: 400px;
+  height: 500px;
+}
+
+#header, .playlist-item, .playlist-item-info {
+  display: flex;
+}
+
+#playlist-container {
+  height: 400px;
+  overflow: scroll;
+}
+
+.white-text {
+  color: var(--white);
+}
+
+.grey-text {
+  opacity: 0.5;
+  color: var(--white);
+}
+
+/* Header */
+
+.current-song-meta {
+  width: 320px;
+  padding-left: 15px;
+  padding-top: 7px;
+  background-color: rgba(0, 0, 0, 0.3);
+  /*-webkit-filter: blur(50px);
+  filter: blur(50px);*/
+}
+
+.current-artist-name {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.33;
+  letter-spacing: 0.1px;
+}
+
+.current-cover {
+  width: 80px;
+  height: 80px;
+}
+
+.resonate-link {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--white);
+}
+
+.right-header {
+  text-align: center;
+  width: 40px;
+}
+
+.resonate-link {
+  height: 40px;
+  line-height: 40px;
+}
+
+.amplitude-shuffle {
+  height: 40px;
+}
+/* Controls & waveform */
+
+#controls {
+  display: flex;
+
+  border-top: .5px solid rgba(255, 255, 255, 0.1);
+  border-bottom: .5px solid rgba(255, 255, 255, 0.1);
+}
+
+.control-button {
+  width: 40px;
+  height: 40px;
+  background-color: var(--medium-grey);
+}
+
+/* Playlist */
+
+#playlist-item-template {
+  display: none;
+}
+
+.amplitude-active-song-container {
+
+}
+
+.playlist-item {
+  height: 49px;
+}
+
+.playlist-item-info {
+  width: 351px;
+  background-color: var(--medium-grey);
+  border-top: .5px solid rgba(255, 255, 255, 0.1);
+  border-bottom: .5px solid rgba(255, 255, 255, 0.1);
+}
+
+.song-cover {
+  width: 49px;
+  height: 49px;
+}
+
+.artist-name {
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.5px;
+}
+
+.song-number {
+  font-size: 15px;
+  line-height: 45px;
+  width: 45px;
+  letter-spacing: 0.1px;
+  text-align: center;
+}
+
+.song-meta {
+  margin: 7px 0;
+}
+
+.song-name {
+  font-size: 15px;
+  line-height: 1.33;
+  letter-spacing: 0.1px;
+}
+
+/* Footer */
+
+#footer {
+  height: 38px;
+  background-color: var(--dark-grey);
+}
+
+.res-nate {
+  float: left;
+  margin-left: 20px;
+  line-height: 35px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.fair-music-streaming {
+  margin-right: 15px;
+  line-height: 37px;
+  font-size: 12px;
+  letter-spacing: 0.1px;
+  text-align: right;
+  color: var(--purple);
+}

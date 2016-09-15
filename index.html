@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resonate Crowdfunding Player</title>
+  <link type="text/css" rel="stylesheet" href="./css/player.css">
+  <script type="text/javascript" src="./../bower_components/amplitude/js/amplitude.js"></script>
+</head>
+<body>
+  <div id="player-container">
+    <!-- Track Currently playing -->
+    <div id="header">
+      <img amplitude-song-info="cover"/>
+      <span amplitude-song-info="name"></span>
+      <span amplitude-song-info="artist"></span>
+      <div class="amplitude-shuffle"></div>
+    </div>
+    <!-- Previous/Next button and currently playing track time visualizations -->
+    <div id="controls">
+      <div class="amplitude-next"></div>
+      <div class="amplitude-prev"></div>
+      <div class="amplitude-song-time-visualization" amplitude-single-song-time-visualization="true"></div>
+    </div>
+    <!-- List of tracks in playlist -->
+    <div id="tracklist">
+      <div class="amplitude-play-pause amplitude-paused" amplitude-main-play-pause="true"></div>
+      <div class="amplitude-song-container">
+        <div class="amplitude-play-pause amplitude-paused" amplitude-song-index="1"></div>
+        <span class="amplitude-duration-minutes" amplitude-song-index="1">0</span>:<span class="amplitude-duration-seconds" amplitude-song-index="1">00</span></span>
+      </div>
+      <div class="amplitude-song-container">
+        <div class="amplitude-play-pause amplitude-paused" amplitude-song-index="2"></div>
+        <span class="amplitude-duration-minutes" amplitude-song-index="2">0</span>:<span class="amplitude-duration-seconds" amplitude-song-index="1">00</span></span>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="res-nate">res(  )nate</div>
+    </div>
+  </div>
+  <script type="text/javascript" src="./js/player.js"></script>
+</body>
+</html>
