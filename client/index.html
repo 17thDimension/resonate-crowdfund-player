@@ -10,9 +10,14 @@
   <div id="player-container">
     <!-- Track Currently playing -->
     <div id="header">
-      <img class="current-cover amplitude-play-pause amplitude-paused"
-            amplitude-song-info="cover"
-            amplitude-main-play-pause="true"/>
+      <div class="current-cover-container amplitude-play-pause amplitude-paused"
+          amplitude-main-play-pause="true">
+        <div class="play-button hidden on-hover"></div>
+        <div class="darkener hidden on-hover"></div>
+        <img class="current-cover"
+              amplitude-song-info="cover"/>
+      </div>
+
       <div class="current-song-meta">
         <div class="white-text current-artist-name" amplitude-song-info="artist"></div>
         <div class="white-text current-song-name" amplitude-song-info="name"></div>
@@ -25,23 +30,27 @@
     <div id="playlist-container">
       <!-- Previous/Next button and currently playing track time visualizations -->
       <div id="controls">
-        <div class="control-button amplitude-next"></div>
-        <div class="control-button amplitude-prev"></div>
+        <div class="control-button amplitude-prev"><</div>
+        <div class="control-button amplitude-next">></div>
         <div class="amplitude-song-time-visualization" amplitude-single-song-time-visualization="true"></div>
       </div>
       <!-- List of tracks in playlist -->
       <div id="playlist">
         <!-- Playlist item template -->
-        <div id="playlist-item-template" class="playlist-item">
-          <img class="amplitude-play-pause amplitude-paused song-cover"  amplitude-song-index="0"/>
+        <div id="playlist-item-template" class="playlist-item amplitude-play-pause amplitude-paused">
+          <div class="cover-container">
+            <div class="play-button small hidden on-hover"></div>
+            <img class="song-cover" amplitude-song-index="0"/>
+          </div>
           <div class="playlist-item-info">
             <div class="grey-text song-number"></div>
             <div class="song-meta">
               <div class="grey-text artist-name"></div>
               <div class="white-text song-name"></div>
             </div>
-            <span class="amplitude-duration-minutes"></span><span class="amplitude-duration-seconds"></span></span>
+            <span class="amplitude-duration-minutes"></span>:<span class="amplitude-duration-seconds"></span></span>
           </div>
+          <div class="overlay hidden on-hover"></div>
         </div>
       </div>
     </div>

@@ -45,6 +45,46 @@ body {
 
 /* Header */
 
+#header {
+  height: 80px;
+}
+.current-ontainer {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.current-cover {
+  width: 80px;
+  height: 80px;
+}
+
+.play-button {
+  position: absolute;
+  top: 35px;
+  left: 38px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent var(--white);
+}
+
+.darkener {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.current-cover-container:hover .on-hover {
+  visibility: visible;
+}
+
 .current-song-meta {
   width: 320px;
   padding-left: 15px;
@@ -59,11 +99,6 @@ body {
   font-weight: bold;
   line-height: 1.33;
   letter-spacing: 0.1px;
-}
-
-.current-cover {
-  width: 80px;
-  height: 80px;
 }
 
 .resonate-link {
@@ -108,11 +143,31 @@ body {
 }
 
 .amplitude-active-song-container {
-
 }
 
 .playlist-item {
   height: 49px;
+}
+
+.playlist-item:hover .on-hover {
+  visibility: visible;
+}
+
+.play-button.small {
+  top: 18px;
+  left: 20px;
+  border-width: 7px 0 7px 11px;
+}
+
+.cover-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 400px;
+  height: 49px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .playlist-item-info {

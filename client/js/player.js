@@ -7,7 +7,7 @@ var mockedSongs = [
     cover_art_url: "./assets/cover/art1.jpg"
   }, {
     name: "Song Name 2",
-    artist: "Artist Name 2",
+    artist: "Artist Name",
     album: "Album Name ",
     url: "./assets/songs/song2.mp3",
     cover_art_url: "./assets/cover/art2.jpg"
@@ -44,7 +44,7 @@ var mockedSongs = [
   }
 ];
 
-Amplitude.init({
+var a =Amplitude.init({
   'songs' : mockedSongs
 });
 
@@ -58,10 +58,10 @@ for (i = 0; i < mockedSongs.length; i++) {
 function createPlaylistItem(i, playListItem) {
   var playlistItemTmpCopy = playlistItemTmp.cloneNode(true);
   playlistItemTmpCopy.id = '';
+  playlistItemTmpCopy.setAttribute('amplitude-song-index', i);
   // Add play/pause clickable cover
-  var coverImg = getElementByClassName(playlistItemTmpCopy, 'amplitude-play-pause');
+  var coverImg = getElementByClassName(playlistItemTmpCopy, 'song-cover');
   coverImg.src = playListItem.cover_art_url;
-  coverImg.setAttribute('amplitude-song-index', i);
   // Add number
   var songNumberEl = getElementByClassName(playlistItemTmpCopy, 'song-number');
   songNumberEl.innerHTML = i + 1;
@@ -70,7 +70,11 @@ function createPlaylistItem(i, playListItem) {
   artistNameEl.innerHTML = playListItem.artist;
   var songNameEl = getElementByClassName(playlistItemTmpCopy, 'song-name');
   songNameEl.innerHTML = playListItem.name;
-  // TODO add duration
+  // Add duration
+  var minEl = getElementByClassName(playlistItemTmpCopy, 'amplitude-duration-minutes');
+  minEl.setAttribute('amplitude-song-index', i);
+  var secEl = getElementByClassName(playlistItemTmpCopy, 'amplitude-duration-seconds');
+  secEl.setAttribute('amplitude-song-index', i);
   return playlistItemTmpCopy;
 }
 
