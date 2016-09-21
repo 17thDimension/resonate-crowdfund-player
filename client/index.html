@@ -10,6 +10,7 @@
   <div id="player-container">
     <!-- Track Currently playing -->
     <div id="header">
+      <img id="header-blur-cover" amplitude-song-info="cover">
       <div class="current-cover-container amplitude-play-pause amplitude-paused"
           amplitude-main-play-pause="true">
         <div class="play-button hidden on-hover"></div>
@@ -27,12 +28,29 @@
         <div class="amplitude-shuffle"></div>
       </div>
     </div>
+    <div id="modal-container" class="closed">
+      <div class="close-modal" onClick="closeModal()">X</div>
+      <div class="modal-content">
+        <div id="skipping-modal-content">
+          <h1>We're sorry.<br/>This player can't jump ahead. There's a really interesting reason why.</h1>
+          <a href="#">
+            <button class="blog-btn">Learn more about our decentralized storage system</button>
+          </a>
+        </div>
+        <div id="resonate-modal-content">
+          <h1>Resonate is a new fair music streaming service in development.</h1>
+          <a href="#">
+            <button class="blog-btn">Learn more about our crowd-owning campaign</button>
+          </a>
+        </div>
+      </div>
+    </div>
     <div id="playlist-container">
       <!-- Previous/Next button and currently playing track time visualizations -->
       <div id="controls">
         <div class="control-button amplitude-prev"><</div>
         <div class="control-button amplitude-next">></div>
-        <div class="amplitude-song-time-visualization" amplitude-single-song-time-visualization="true"></div>
+        <div class="amplitude-song-time-visualization" amplitude-single-song-time-visualization="true" onClick="openModal('skipping')"></div>
       </div>
       <!-- List of tracks in playlist -->
       <div id="playlist">
@@ -55,7 +73,7 @@
       </div>
     </div>
     <div id="footer">
-      <div class="grey-text res-nate">res(  )nate</div>
+      <div class="grey-text res-nate" onClick="openModal('resonate')">res(  )nate</div>
       <div class="fair-music-streaming">#fairmusicstreaming</div>
     </div>
   </div>

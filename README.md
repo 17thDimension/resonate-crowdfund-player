@@ -6,5 +6,8 @@ The client/ folder contains HTML, CSS and vanilla JS front-end code for the play
 
 ### Development
 
+Make sure to have 'local-web-server' installed globally `npm install local-web-server -g`
+
 * Run `bower install && npm install`
+
 * Run `ws` and open `http://localhost:8000/client/`

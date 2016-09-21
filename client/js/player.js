@@ -81,3 +81,14 @@ function createPlaylistItem(i, playListItem) {
 function getElementByClassName(el, className) {
   return el.getElementsByClassName(className)[0];
 }
+
+/* Modal */
+var modal = document.getElementById('modal-container');
+
+function closeModal() {
+  modal.classList = [];
+}
+
+function openModal(type) {
+  modal.className = 'open ' + type;
+}

@@ -23,6 +23,7 @@ body {
   background-color: var(--medium-grey);
   width: 400px;
   height: 500px;
+  position: relative;
 }
 
 #header, .playlist-item, .playlist-item-info {
@@ -47,7 +48,21 @@ body {
 
 #header {
   height: 80px;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
 }
+#header-blur-cover {
+  -webkit-filter: blur(50px);
+  -moz-filter: blur(50px);
+  -o-filter: blur(50px);
+  -ms-filter: blur(50px);
+  filter: blur(50px);
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
 .current-ontainer {
   position: relative;
   width: 80px;
@@ -81,6 +96,10 @@ body {
   visibility: hidden;
 }
 
+.current-cover-container {
+  z-index: 1;
+}
+
 .current-cover-container:hover .on-hover {
   visibility: visible;
 }
@@ -89,9 +108,7 @@ body {
   width: 320px;
   padding-left: 15px;
   padding-top: 7px;
-  background-color: rgba(0, 0, 0, 0.3);
-  /*-webkit-filter: blur(50px);
-  filter: blur(50px);*/
+  z-index: 1;
 }
 
 .current-artist-name {
@@ -111,6 +128,7 @@ body {
 .right-header {
   text-align: center;
   width: 40px;
+  z-index: 1;
 }
 
 .resonate-link {
@@ -134,6 +152,62 @@ body {
   width: 40px;
   height: 40px;
   background-color: var(--medium-grey);
+}
+
+.amplitude-song-time-visualization {
+  height: 40px;
+  width: 100%;
+}
+
+/* Modal */
+
+#modal-container {
+  background: var(--purple);
+  height: 400px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  display: none;
+}
+
+#modal-container.open {
+  display:block;
+}
+
+.modal-content {
+  margin: 20px;
+}
+
+#skipping-modal-content, #resonate-modal-content {
+  display: none;
+}
+
+#modal-container.open.skipping #skipping-modal-content,
+#modal-container.open.resonate #resonate-modal-content {
+  display:block;
+}
+
+.modal-content h1 {
+  margin-bottom: 60px;
+}
+
+.close-modal {
+  float:right;
+}
+
+.blog-btn {
+  border: 1px solid white;
+  text-transform: uppercase;
+  line-height: 1.33;
+  letter-spacing: 0.1px;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px 25px;
+  background: transparent;
+  color: #fff;
 }
 
 /* Playlist */
