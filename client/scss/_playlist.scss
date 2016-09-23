@@ -1,0 +1,66 @@
+#playlist-item-template {
+  display: none;
+}
+
+.amplitude-active-song-container {
+}
+
+.playlist-item {
+  height: 49px;
+}
+
+.playlist-item:hover .on-hover {
+  visibility: visible;
+}
+
+.play-button.small {
+  top: 18px;
+  left: 20px;
+  border-width: 7px 0 7px 11px;
+}
+
+.cover-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 400px;
+  height: 49px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.playlist-item-info {
+  width: 351px;
+  background-color: $medium-grey;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.song-cover {
+  width: 49px;
+  height: 49px;
+}
+
+.artist-name {
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.5px;
+}
+
+.song-number {
+  font-size: 15px;
+  line-height: 45px;
+  width: 45px;
+  letter-spacing: 0.1px;
+  text-align: center;
+}
+
+.song-meta {
+  margin: 7px 0;
+}
+
+.song-name {
+  font-size: 15px;
+  line-height: 1.33;
+  letter-spacing: 0.1px;
+}

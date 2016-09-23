@@ -6,31 +6,30 @@ var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var jshint = require('gulp-jshint');
 var livereload = require('gulp-livereload');
+var sass = require('gulp-sass');
+var rename = require('gulp-rename');
 
-// Save for Sass and css build
-// var sass = require('gulp-sass');
-// var minifyCSS = require('gulp-minify-css');
-// gulp.task('buildCSS', function () {
-//     return gulp.src('./browser/scss/main.scss')
-//         .pipe(plumber())
-//         .pipe(sass())
-//         .pipe(rename('style.css'))
-//         .pipe(gulp.dest('./public'))
-// });
+
+
+gulp.task('buildCSS', function () {
+    return gulp.src('./client/scss/main.scss')
+        .pipe(plumber())
+        .pipe(sass())
+        .pipe(rename('style.css'))
+        .pipe(gulp.dest('./client/public'))
+});
+
+gulp.task('reloadCSS', function () {
+    return gulp.src('./client/public/style.css').pipe(livereload());
+});
 
 // Save for Prod Build
 // var uglify = require('gulp-uglify');
-// var runSeq = require('run-sequence');
+// var minifyCSS = require('gulp-minify-css');
 
 gulp.task('reload', function () {
     livereload.reload();
 });
-
-// gulp.task('lintJS', function () {
-//     return gulp.src(['./client/js/**/*.js'])
-//         .pipe(jshint())
-//         .pipe(jshint.reporter('jshint-stylish'));
-// });
 
 gulp.task('buildJS', function () {
     return gulp.src(['./client/js/**/*.js'])
@@ -43,7 +42,7 @@ gulp.task('buildJS', function () {
 });
 
 gulp.task('build', function () {
-    runSeq(['buildJS']); //, 'buildCSS']);
+    runSeq(['buildJS', 'buildCSS']);
 })
 
 
@@ -55,11 +54,9 @@ gulp.task('default', function () {
       runSeq('buildJS', ['reload']);
   });
 
-
-
-    // gulp.watch('browser/scss/**', function () {
-    //     runSeq('buildCSS', 'reloadCSS');
-    // });
+  gulp.watch('client/scss/**', function () {
+      runSeq('buildCSS', 'reloadCSS');
+  });
 
     gulp.watch(['client/**/*.html'], ['reload']);
 

@@ -1,0 +1,47 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: averta;
+  src: url('./../assets/fonts/AvertaDemo-Regular.otf');
+}
+
+body {
+  font-family: averta, sans-serif;
+}
+
+#player-container {
+  background-color: $medium-grey;
+  width: 400px;
+  height: 500px;
+  position: relative;
+}
+
+#header, .playlist-item, .playlist-item-info {
+  display: flex;
+}
+
+#playlist-container {
+  height: 400px;
+  overflow: scroll;
+  background: $medium-grey;
+}
+
+.white-text {
+  color: $white;
+}
+
+.grey-text {
+  opacity: 0.5;
+  color: $white;
+}
+
+@import 'mixins';
+@import 'footer';
+@import 'playlist';
+@import 'modal';
+@import 'controls';
+@import 'header';

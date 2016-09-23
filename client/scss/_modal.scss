@@ -1,0 +1,49 @@
+#modal-container {
+  background: $purple;
+  height: 400px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  color: white;
+  padding: 20px;
+  display: none;
+}
+
+#modal-container.open {
+  display:block;
+}
+
+.modal-content {
+  margin: 20px;
+  h1 {
+    margin-bottom: 60px;
+  }
+}
+
+#skipping-modal-content, #resonate-modal-content {
+  display: none;
+}
+
+#modal-container.open.skipping #skipping-modal-content,
+#modal-container.open.resonate #resonate-modal-content {
+  display:block;
+}
+
+.close-modal {
+  float:right;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.blog-btn {
+  border: 1px solid white;
+  text-transform: uppercase;
+  line-height: 1.33;
+  letter-spacing: 0.1px;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px 25px;
+  background: transparent;
+  color: #fff;
+}

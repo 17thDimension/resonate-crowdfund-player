@@ -1,0 +1,96 @@
+#header {
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#header-blur-cover {
+  @include filter-blur(50px);
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.current-ontainer {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.current-cover {
+  width: 80px;
+  height: 80px;
+}
+
+.play-button {
+  position: absolute;
+  top: 35px;
+  left: 38px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent $white;
+}
+
+.darkener {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.current-cover-container {
+  z-index: 1;
+}
+
+.current-cover-container:hover .on-hover {
+  visibility: visible;
+}
+
+.current-song-meta {
+  width: 320px;
+  padding-left: 15px;
+  padding-top: 7px;
+  z-index: 1;
+}
+
+.current-artist-name {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.33;
+  letter-spacing: 0.1px;
+}
+
+.resonate-link {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: $white;
+}
+
+.right-header {
+  text-align: center;
+  width: 40px;
+  z-index: 1;
+}
+
+.resonate-link {
+  height: 40px;
+  line-height: 40px;
+}
+
+.amplitude-shuffle {
+  height: 40px;
+  opacity: 0.6;
+  margin-right: 2px;
+  color: $white;
+  i {
+    @include rotate(90deg);
+    display: inline-block;
+  }
+}

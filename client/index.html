@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Resonate Crowdfunding Player</title>
-  <link type="text/css" rel="stylesheet" href="./css/player.css">
   <script type="text/javascript" src="./../bower_components/amplitude/js/amplitude.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.0.52/wavesurfer.min.js"></script>
+  <link href="./../node_modules/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
   <div id="player-container">
@@ -25,12 +25,16 @@
         <div class="white-text current-song-name" amplitude-song-info="name"></div>
       </div>
       <div class="right-header">
-        <a class="resonate-link">( )</a>
-        <div class="amplitude-shuffle"></div>
+        <a class="resonate-link">(&nbsp;&nbsp;)</a>
+        <div class="amplitude-shuffle">
+          <i class="mdi mdi-dots-horizontal mdi-24px"></i>
+        </div>
       </div>
     </div>
     <div id="modal-container" class="closed">
-      <div class="close-modal" onClick="closeModal()">X</div>
+      <div class="close-modal" onClick="closeModal()">
+        <i class="mdi mdi-close mdi-24px"></i>
+      </div>
       <div class="modal-content">
         <div id="skipping-modal-content">
           <h1>We're sorry.<br/>This player can't jump ahead. There's a really interesting reason why.</h1>
@@ -48,8 +52,12 @@
     </div>
     <div id="controls-container">
       <div id="controls">
-        <div class="control-button amplitude-prev"><</div>
-        <div class="control-button amplitude-next">></div>
+        <div class="control-button amplitude-prev">
+          <i class="mdi mdi-skip-previous mdi-24px"></i>
+        </div>
+        <div class="control-button amplitude-next">
+          <i class="mdi mdi-skip-next mdi-24px"></i>
+        </div>
       </div>
       <div id="waveform-container">
         <div id="waveform"></div>
@@ -85,5 +93,6 @@
     </div>
   </div>
   <script type="text/javascript" src="./public/main.js"></script>
+  <link type="text/css" rel="stylesheet" href="./public/style.css">
 </body>
 </html>
