@@ -5,6 +5,7 @@
   <title>Resonate Crowdfunding Player</title>
   <link type="text/css" rel="stylesheet" href="./css/player.css">
   <script type="text/javascript" src="./../bower_components/amplitude/js/amplitude.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.0.52/wavesurfer.min.js"></script>
 </head>
 <body>
   <div id="player-container">
@@ -45,13 +46,19 @@
         </div>
       </div>
     </div>
-    <div id="playlist-container">
-      <!-- Previous/Next button and currently playing track time visualizations -->
+    <div id="controls-container">
       <div id="controls">
         <div class="control-button amplitude-prev"><</div>
         <div class="control-button amplitude-next">></div>
+      </div>
+      <div id="waveform-container">
+        <div id="waveform"></div>
         <div class="amplitude-song-time-visualization" amplitude-single-song-time-visualization="true" onClick="openModal('skipping')"></div>
       </div>
+    </div>
+
+    <div id="playlist-container">
+      <!-- Previous/Next button and currently playing track time visualizations -->
       <!-- List of tracks in playlist -->
       <div id="playlist">
         <!-- Playlist item template -->
@@ -77,6 +84,6 @@
       <div class="fair-music-streaming">#fairmusicstreaming</div>
     </div>
   </div>
-  <script type="text/javascript" src="./js/player.js"></script>
+  <script type="text/javascript" src="./public/main.js"></script>
 </body>
 </html>

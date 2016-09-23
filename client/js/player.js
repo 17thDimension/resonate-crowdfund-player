@@ -92,3 +92,17 @@ function closeModal() {
 function openModal(type) {
   modal.className = 'open ' + type;
 }
+
+/* Waveform */
+function drawCanvasAudio () {
+  var wavesurfer = WaveSurfer.create({
+    container: '#waveform',
+    waveColor: '#97a7dc',
+    progressColor: 'purple',
+    height: '40'
+  });
+
+  wavesurfer.load('./assets/songs/song2.mp3');
+}
+
+drawCanvasAudio();

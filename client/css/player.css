@@ -33,6 +33,7 @@ body {
 #playlist-container {
   height: 400px;
   overflow: scroll;
+  background: var(--medium-grey)
 }
 
 .white-text {
@@ -139,13 +140,19 @@ body {
 .amplitude-shuffle {
   height: 40px;
 }
+
 /* Controls & waveform */
+#controls-container {
+  height: 40px;
+  overflow: hidden;
+}
 
 #controls {
-  display: flex;
-
+  display: inline-flex;
+  width: 80px;
   border-top: .5px solid rgba(255, 255, 255, 0.1);
   border-bottom: .5px solid rgba(255, 255, 255, 0.1);
+  float: left;
 }
 
 .control-button {
@@ -157,6 +164,35 @@ body {
 .amplitude-song-time-visualization {
   height: 40px;
   width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.amplitude-song-time-visualization-status {
+  height: 40px;
+  background: rgba(0, 0, 0, 0.4);
+  border-right: 1px solid white;
+}
+
+#waveform-container {
+  height: 40px;
+  width: 315px;
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+}
+
+#waveform {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-filter: blur(0.5px);
+  -moz-filter: blur(0.5px);
+  -o-filter: blur(0.5px);
+  -ms-filter: blur(0.5px);
+  filter: blur(0.5px);
 }
 
 /* Modal */
