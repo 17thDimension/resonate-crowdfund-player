@@ -57,10 +57,21 @@
 
 .song-meta {
   margin: 7px 0;
+  width: 266px;
 }
 
 .song-name {
   font-size: 15px;
   line-height: 1.33;
   letter-spacing: 0.1px;
+}
+
+.duration {
+  width: 40px;
+  opacity: 0.5;
+  font-size: 11px;
+  line-height: 46px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: $white;
 }

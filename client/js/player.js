@@ -44,7 +44,7 @@ var mockedSongs = [
   }
 ];
 
-var a =Amplitude.init({
+Amplitude.init({
   'songs' : mockedSongs
 });
 
