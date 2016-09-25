@@ -39,6 +39,10 @@ body {
   color: $white;
 }
 
+a {
+  text-decoration: none;
+}
+
 @import 'mixins';
 @import 'footer';
 @import 'playlist';

@@ -20,5 +20,7 @@
   font-size: 12px;
   letter-spacing: 0.1px;
   text-align: right;
-  color: $purple;
+  a {
+    color: $purple;
+  }
 }
