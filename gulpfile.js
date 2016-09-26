@@ -32,7 +32,7 @@ gulp.task('reload', function () {
 });
 
 gulp.task('buildJS', function () {
-    return gulp.src(['./client/js/**/*.js'])
+    return gulp.src(['./client/js/main.js', './client/js/**/*.js'])
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(concat('main.js'))

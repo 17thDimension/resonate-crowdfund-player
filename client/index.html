@@ -70,27 +70,59 @@
       <!-- List of tracks in playlist -->
       <div id="playlist">
         <!-- Playlist item template -->
-        <div id="playlist-item-template" class="playlist-item amplitude-play-pause amplitude-paused">
-          <div class="cover-container">
-            <div class="play-button small hidden on-hover"></div>
-            <img class="song-cover" amplitude-song-index="0"/>
-          </div>
-          <div class="playlist-item-info">
-            <div class="grey-text song-number"></div>
-            <div class="song-meta">
-              <div class="grey-text artist-name"></div>
-              <div class="white-text song-name"></div>
+        <div id="playlist-item-template" class="playlist-item" amplitude-song-index="0">
+          <div class="standard-info-container">
+            <div class="cover-container">
+              <div class="amplitude-play-pause amplitude-paused" amplitude-song-index="0"></div>
+              <!-- <div class="play-button small hidden on-hover amplitude-play-pause amplitude-paused" amplitude-song-index="0"></div> -->
+              <img class="song-cover"/>
             </div>
-            <div class="duration">
-              <span class="amplitude-duration-minutes"></span>:<span class="amplitude-duration-seconds"></span></span>
+            <div class="playlist-item-info-container">
+              <div class="playlist-item-info">
+                <div class="grey-text song-number"></div>
+                <div class="song-meta">
+                  <div class="grey-text artist-name"></div>
+                  <div class="white-text song-name"></div>
+                </div>
+                <button class="buy-button grey-text">Free</button>
+                <div class="duration">
+                  <span class="amplitude-duration-minutes">0</span>:<span class="amplitude-duration-seconds">00</span></span>
+                </div>
+                <div class="action-icons">
+                  <div class="mdi mdi-heart-outline mdi-24px"></div>
+                  <div class="mdi mdi-playlist-plus mdi-24px"></div>
+                  <div class="more-info-button mdi mdi-chevron-down mdi-24px" onClick="toggleMoreInfo(event)" amplitude-song-index="0"></div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="overlay hidden on-hover"></div>
+          <div class="more-info more-info-0">
+            <div class="more-info-row">
+              <div class="wordy-section">
+                <div class="mdi mdi-playlist-plus"></div>
+                <span>Added to 123 playlists</span>
+              </div>
+              <div class="number-section">
+                <div class="mdi mdi-play"></div>
+                <span>1,234</span>
+              </div>
+            </div>
+            <div class="more-info-row">
+              <div class="wordy-section">
+                <div class="mdi mdi-account-multiple"></div>
+                <span>Added to 45 people you follow</span>
+              </div>
+              <div class="number-section">
+                <div class="mdi mdi-heart"></div>
+                <span>567</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div id="footer">
-      <div class="grey-text res-nate" onClick="openModal('resonate')">res(  )nate</div>
+      <div class="grey-text res-nate" onClick="openModal('resonate')">res(&nbsp;&nbsp;)nate</div>
       <div class="fair-music-streaming">
         <a target="_blank" href="https://twitter.com/resonatecoop">#fairmusicstreaming</a>
       </div>

@@ -44,9 +44,33 @@ var mockedSongs = [
   }
 ];
 
+// Init Amplitude
 Amplitude.init({
-  'songs' : mockedSongs
+  'songs' : mockedSongs,
+  "debug": true,
+  "callbacks": {
+      "before_play": "beforeNewTrackPlay"
+    // after_play
+    // before_stop
+    // after_stop
+    // before_next
+    // after_next
+    // before_prev
+    // after_prev
+    // before_album_change
+    // after_album_change
+    // after_init
+  }
 });
+
+// Init Wavesurfer
+var wavesurfer = WaveSurfer.create({
+  container: '#waveform',
+  waveColor: '#97a7dc',
+  progressColor: 'purple',
+  height: '40'
+});
+
 
 var playlistEl = document.getElementById('playlist');
 var playlistItemTmp = getElementByClassName(playlistEl, 'playlist-item');
@@ -57,10 +81,11 @@ for (i = 0; i < mockedSongs.length; i++) {
 
 function createPlaylistItem(i, playListItem) {
   var playlistItemTmpCopy = playlistItemTmp.cloneNode(true);
-  playlistItemTmpCopy.id = '';
+  playlistItemTmpCopy.id = 'playlist-item-'+i;
   playlistItemTmpCopy.setAttribute('amplitude-song-index', i);
   // Add play/pause clickable cover
   var coverImg = getElementByClassName(playlistItemTmpCopy, 'song-cover');
+  coverImg.setAttribute('amplitude-song-index', i);
   coverImg.src = playListItem.cover_art_url;
   // Add number
   var songNumberEl = getElementByClassName(playlistItemTmpCopy, 'song-number');
@@ -75,34 +100,12 @@ function createPlaylistItem(i, playListItem) {
   minEl.setAttribute('amplitude-song-index', i);
   var secEl = getElementByClassName(playlistItemTmpCopy, 'amplitude-duration-seconds');
   secEl.setAttribute('amplitude-song-index', i);
+  var mibEl = getElementByClassName(playlistItemTmpCopy, 'more-info-button');
+  mibEl.setAttribute('amplitude-song-index', i);
+
   return playlistItemTmpCopy;
 }
 
 function getElementByClassName(el, className) {
   return el.getElementsByClassName(className)[0];
 }
-
-/* Modal */
-var modal = document.getElementById('modal-container');
-
-function closeModal() {
-  modal.classList = [];
-}
-
-function openModal(type) {
-  modal.className = 'open ' + type;
-}
-
-/* Waveform */
-function drawCanvasAudio () {
-  var wavesurfer = WaveSurfer.create({
-    container: '#waveform',
-    waveColor: '#97a7dc',
-    progressColor: 'purple',
-    height: '40'
-  });
-
-  wavesurfer.load('./assets/songs/song2.mp3');
-}
-
-drawCanvasAudio();
