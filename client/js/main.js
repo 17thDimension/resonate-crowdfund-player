@@ -49,17 +49,16 @@ Amplitude.init({
   'songs' : mockedSongs,
   "debug": true,
   "callbacks": {
-      "before_play": "beforeNewTrackPlay"
+      "before_play": "beforeNewTrackPlay",
+      "after_next": "beforeNewTrackPlay"
+      // "after_prev": "beforeNewTrackPlay"
     // after_play
     // before_stop
     // after_stop
     // before_next
-    // after_next
     // before_prev
-    // after_prev
     // before_album_change
     // after_album_change
-    // after_init
   }
 });
 
@@ -70,6 +69,11 @@ var wavesurfer = WaveSurfer.create({
   progressColor: 'purple',
   height: '40'
 });
+
+wavesurfer.load(mockedSongs[0].url)
+var currentWaveform = document.getElementById('waveform')
+currentWaveform.className = mockedSongs[0].name
+
 
 
 var playlistEl = document.getElementById('playlist');
@@ -100,8 +104,12 @@ function createPlaylistItem(i, playListItem) {
   minEl.setAttribute('amplitude-song-index', i);
   var secEl = getElementByClassName(playlistItemTmpCopy, 'amplitude-duration-seconds');
   secEl.setAttribute('amplitude-song-index', i);
+  // More Info Toggle
   var mibEl = getElementByClassName(playlistItemTmpCopy, 'more-info-button');
   mibEl.setAttribute('amplitude-song-index', i);
+  // Play Button for track
+  var minEl = getElementByClassName(playlistItemTmpCopy, 'amplitude-play-pause');
+  minEl.setAttribute('amplitude-song-index', i);
 
   return playlistItemTmpCopy;
 }

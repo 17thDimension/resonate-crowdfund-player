@@ -14,7 +14,10 @@
       <img id="header-blur-cover" amplitude-song-info="cover">
       <div class="current-cover-container amplitude-play-pause amplitude-paused"
           amplitude-main-play-pause="true">
-        <div class="play-button hidden on-hover"></div>
+        <div class="play-button-container hidden on-hover">
+          <div class="mdi mdi-play mdi-48px"></div>
+          <div class="mdi mdi-pause mdi-48px"></div>
+        </div>
         <div class="darkener hidden on-hover"></div>
         <img class="current-cover"
               amplitude-song-info="cover"/>
@@ -73,8 +76,8 @@
         <div id="playlist-item-template" class="playlist-item" amplitude-song-index="0">
           <div class="standard-info-container">
             <div class="cover-container">
-              <div class="amplitude-play-pause amplitude-paused" amplitude-song-index="0"></div>
-              <!-- <div class="play-button small hidden on-hover amplitude-play-pause amplitude-paused" amplitude-song-index="0"></div> -->
+              <div class="amplitude-paused" amplitude-song-index="0"></div>
+              <div class="play-button small amplitude-play-pause amplitude-paused" amplitude-song-index="0"></div>
               <img class="song-cover"/>
             </div>
             <div class="playlist-item-info-container">

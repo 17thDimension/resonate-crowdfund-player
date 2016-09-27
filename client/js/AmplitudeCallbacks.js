@@ -1,4 +1,8 @@
 function beforeNewTrackPlay() {
-	console.log('Amplitude.getActiveSongMetadata()', Amplitude.getActiveSongMetadata())
-	wavesurfer.load(Amplitude.getActiveSongMetadata().url)
+	var currentWaveformTrack = document.getElementById('waveform').className
+	if (currentWaveformTrack != Amplitude.getActiveSongMetadata().name) {
+		wavesurfer.load(Amplitude.getActiveSongMetadata().url)
+		document.getElementById('waveform').className = Amplitude.getActiveSongMetadata().name
+
+	}
 }

@@ -12,6 +12,9 @@
     .buy-button, .duration {
       display:none;
     }
+    .standard-info-container {
+      background-color: rgba(255, 255, 255, 0.2)
+    }
 
     .action-icons {
       display: inline-block;
@@ -39,7 +42,13 @@
     height: 50px;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.2)
+      .play-button {
+        display: block;
+      }
+    }
+
+    .play-button {
+      display: none;
     }
 
     .song-meta {

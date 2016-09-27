@@ -46,10 +46,31 @@
 
 .current-cover-container {
   z-index: 1;
-}
 
-.current-cover-container:hover .on-hover {
-  visibility: visible;
+  &:hover {
+    .on-hover {
+      visibility: visible;
+    }
+  }
+
+  &.amplitude-paused {
+    .mdi-pause{
+      display:none;
+    }
+  }
+
+  &.amplitude-playing {
+    .mdi-play{
+      display:none;
+    }
+  }
+
+  .play-button-container {
+    position: absolute;
+    top: 16px;
+    left: 14px;
+    color: $white;
+  }
 }
 
 .current-song-meta {

@@ -11,3 +11,12 @@ Make sure to have 'local-web-server' installed globally `npm install local-web-s
 * Run `bower install && npm install`
 * Run `gulp` to build the js file
 * Run `ws` and open `http://localhost:8000/client/`
+
+
+TODOs:
+* Play button on cover image in playlist
+* Functionality for icon buttons
+* ... button in the header
+* Colored waveform
+* Time length of track on initialization
+* links for modal
