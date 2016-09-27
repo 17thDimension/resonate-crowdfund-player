@@ -20,7 +20,11 @@ body {
   position: relative;
 }
 
-#header, .playlist-item, .playlist-item-info {
+.playlist-item{
+  display: block;
+}
+
+#header, .playlist-item-info {
   display: flex;
 }
 
@@ -42,6 +46,20 @@ body {
 a {
   text-decoration: none;
 }
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
 
 @import 'mixins';
 @import 'footer';
