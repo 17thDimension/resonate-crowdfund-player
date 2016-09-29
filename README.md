@@ -19,4 +19,6 @@ TODOs:
 * ... button in the header
 * Colored waveform
 * Time length of track on initialization
-* links for modal
+* Links for modal
+* Style for currently played track in playlist (purple text)
+* Hide controls container on initialization, only show once a track starts playing
