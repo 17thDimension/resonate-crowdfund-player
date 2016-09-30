@@ -44,7 +44,10 @@
   visibility: hidden;
 }
 
-.current-cover-container {
+//play button on covers
+.cover-container {
+  width: 80px;
+  height: 80px;
   z-index: 1;
 
   &:hover {
@@ -71,6 +74,11 @@
     left: 14px;
     color: $white;
   }
+}
+
+.standard-info-container .cover-container .play-button-container {
+  top: 12px;
+  left: 11px;
 }
 
 .current-song-meta {
