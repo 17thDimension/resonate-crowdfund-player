@@ -12,7 +12,7 @@
     <!-- Track Currently playing -->
     <div id="header">
       <img id="header-blur-cover" amplitude-song-info="cover">
-      <div class="current-cover-container amplitude-play-pause amplitude-paused"
+      <div class="cover-container amplitude-play-pause amplitude-paused"
           amplitude-main-play-pause="true">
         <div class="play-button-container hidden on-hover">
           <div class="mdi mdi-play mdi-48px"></div>
@@ -34,25 +34,6 @@
         </div>
       </div>
     </div>
-    <div id="modal-container" class="closed">
-      <div class="close-modal" onClick="closeModal()">
-        <i class="mdi mdi-close mdi-24px"></i>
-      </div>
-      <div class="modal-content">
-        <div id="skipping-modal-content">
-          <h1>We're sorry.<br/>This player can't jump ahead. There's a really interesting reason why.</h1>
-          <a href="#">
-            <button class="blog-btn">Learn more about our decentralized storage system</button>
-          </a>
-        </div>
-        <div id="resonate-modal-content">
-          <h1>Resonate is a new fair music streaming service in development.</h1>
-          <a href="#">
-            <button class="blog-btn">Learn more about our crowd-owning campaign</button>
-          </a>
-        </div>
-      </div>
-    </div>
     <div id="controls-container">
       <div id="controls">
         <div class="control-button amplitude-prev">
@@ -68,16 +49,43 @@
       </div>
     </div>
 
+
+
+
     <div id="playlist-container">
+      <div id="modal-container" class="closed">
+        <div class="close-modal" onClick="closeModal()">
+          <i class="mdi mdi-close mdi-24px"></i>
+        </div>
+        <div class="modal-content">
+          <div id="skipping-modal-content">
+            <h1>We're sorry.<br/>This player can't jump ahead. There's a really interesting reason why.</h1>
+            <a target="_blank" href="https://resonate.is/building-a-blockchain-database/">
+              <button class="blog-btn">Learn more about our decentralized storage system</button>
+            </a>
+          </div>
+          <div id="resonate-modal-content">
+            <h1>Resonate is<br/>a new fair music streaming service in development.</h1>
+            <a target="_blank" href="https://resonate.is/presenting-the-roadmap/">
+              <button class="blog-btn">Learn more about our crowd-owning campaign</button>
+            </a>
+          </div>
+        </div>
+      </div>
       <!-- Previous/Next button and currently playing track time visualizations -->
       <!-- List of tracks in playlist -->
       <div id="playlist">
         <!-- Playlist item template -->
         <div id="playlist-item-template" class="playlist-item" amplitude-song-index="0">
           <div class="standard-info-container">
-            <div class="cover-container">
-              <div class="amplitude-paused" amplitude-song-index="0"></div>
-              <div class="play-button small amplitude-play-pause amplitude-paused" amplitude-song-index="0"></div>
+            <div class="cover-container amplitude-play-pause amplitude-paused" amplitude-song-index="0">
+              <!-- <div class="amplitude-paused" amplitude-song-index="0"></div> -->
+              <!-- <div class="play-button small amplitude-play-pause amplitude-paused" amplitude-song-index="0"></div> -->
+              <div class="play-button-container hidden on-hover">
+                <div class="mdi mdi-play mdi-24px"></div>
+                <div class="mdi mdi-pause mdi-24px"></div>
+              </div>
+
               <img class="song-cover"/>
             </div>
             <div class="playlist-item-info-container">
@@ -89,7 +97,9 @@
                 </div>
                 <button class="buy-button grey-text">Free</button>
                 <div class="duration">
-                  <span class="amplitude-duration-minutes">0</span>:<span class="amplitude-duration-seconds">00</span></span>
+                  <!-- <span class="amplitude-duration-minutes">0</span>:<span class="amplitude-duration-seconds">00</span></span> -->
+                  <span class="amplitude-duration-minutes" amplitude-song-index="0">0</span>:<span class="amplitude-duration-seconds" amplitude-song-index="0">00</span></span>
+
                 </div>
                 <div class="action-icons">
                   <div class="mdi mdi-heart-outline mdi-24px"></div>

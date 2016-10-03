@@ -14,11 +14,15 @@ Make sure to have 'local-web-server' installed globally `npm install local-web-s
 
 
 TODOs:
-* Play button on cover image in playlist
 * Functionality for icon buttons
-* ... button in the header
+    * will this functionality expected to be live?
+    * do we have api endpoints?
+* ... button in the header ? Shuffle button
+		* shuffle button?
+* Style for currently played track in playlist (purple text)
+		* is this in a mock up anywhere? just use the basic purple color?
+* Links for modal - check if these are right!
+		* will ask peter
 * Colored waveform
 * Time length of track on initialization
-* Links for modal
-* Style for currently played track in playlist (purple text)
-* Hide controls container on initialization, only show once a track starts playing
+* Amplitude breaks in shuffle mode ???

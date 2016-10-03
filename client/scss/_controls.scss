@@ -1,7 +1,12 @@
 #controls-container {
-  height: 40px;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  height: 0px;
+  transition: height 1s ease-in-out;
+
+  &.open {
+    height: 40px;
+  }
 
   #controls {
     display: inline-flex;

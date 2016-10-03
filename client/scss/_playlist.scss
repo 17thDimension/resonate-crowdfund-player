@@ -2,8 +2,6 @@
   display: none;
 }
 
-
-
 .playlist-item {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   // height: 50px;
@@ -56,6 +54,14 @@
       width: 185px;
     }
 
+    .cover-container {
+      position: relative;
+      display: inline-block;
+      width: 49px;
+      height: 49px;
+      float: left;
+    }
+
     .duration {
       width: 60px;
       opacity: 0.5;
@@ -79,17 +85,18 @@
 
   &.open {
     .more-info {
-      display: block;
+      height: 70px;
+      padding-top: 5px;
     }
   }
 
   // More Info
   .more-info {
-    display: none;
     padding-left: 50px;
-    padding-top: 5px;
-    height: 70px;
+    height: 0px;
     background-color: $dark-grey;
+    overflow: hidden;
+    transition: height .75s ease-in-out, padding 1s ease-in-out;
 
     .more-info-row {
       width: 100%;
@@ -124,13 +131,6 @@
   border-width: 7px 0 7px 11px;
 }
 
-.cover-container {
-  position: relative;
-  display: inline-block;
-  width: 49px;
-  height: 49px;
-  float: left;
-}
 
 .overlay {
   position: absolute;
