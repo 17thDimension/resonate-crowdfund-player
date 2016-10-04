@@ -6,6 +6,23 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   // height: 50px;
 
+  &.currently-playing {
+    .white-text, .grey-text,
+    .action-icons {
+      color: $purple;
+      opacity: 1;
+    }
+    .standard-info-container {
+      .duration {
+        color: $purple;
+        opacity: 1;
+      }
+      .buy-button {
+        border-color: $purple;
+      }
+    }
+  }
+
   &:hover {
     .buy-button, .duration {
       display:none;

@@ -19,10 +19,7 @@ TODOs:
     * do we have api endpoints?
 * ... button in the header ? Shuffle button
 		* shuffle button?
-* Style for currently played track in playlist (purple text)
-		* is this in a mock up anywhere? just use the basic purple color?
 * Links for modal - check if these are right!
 		* will ask peter
 * Colored waveform
-* Time length of track on initialization
 * Amplitude breaks in shuffle mode ???

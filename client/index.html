@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Resonate Crowdfunding Player</title>
-  <script type="text/javascript" src="./../bower_components/amplitude/js/amplitude.js"></script>
+  <!-- // <script type="text/javascript" src="./../bower_components/amplitude/js/amplitude.js"></script> -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.0.52/wavesurfer.min.js"></script>
   <link href="./../node_modules/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
 </head>
@@ -76,11 +76,11 @@
       <!-- List of tracks in playlist -->
       <div id="playlist">
         <!-- Playlist item template -->
-        <div id="playlist-item-template" class="playlist-item" amplitude-song-index="0">
+        <div id="playlist-item-template" class="playlist-item">
           <div class="standard-info-container">
-            <div class="cover-container amplitude-play-pause amplitude-paused" amplitude-song-index="0">
-              <!-- <div class="amplitude-paused" amplitude-song-index="0"></div> -->
-              <!-- <div class="play-button small amplitude-play-pause amplitude-paused" amplitude-song-index="0"></div> -->
+            <div class="cover-container amplitude-play-pause amplitude-paused">
+              <!-- <div class="amplitude-paused"></div> -->
+              <!-- <div class="play-button small amplitude-play-pause amplitude-paused"></div> -->
               <div class="play-button-container hidden on-hover">
                 <div class="mdi mdi-play mdi-24px"></div>
                 <div class="mdi mdi-pause mdi-24px"></div>
@@ -98,13 +98,13 @@
                 <button class="buy-button grey-text">Free</button>
                 <div class="duration">
                   <!-- <span class="amplitude-duration-minutes">0</span>:<span class="amplitude-duration-seconds">00</span></span> -->
-                  <span class="amplitude-duration-minutes" amplitude-song-index="0">0</span>:<span class="amplitude-duration-seconds" amplitude-song-index="0">00</span></span>
+                  <span class="amplitude-duration-minutes">0</span>:<span class="amplitude-duration-seconds">00</span></span>
 
                 </div>
                 <div class="action-icons">
                   <div class="mdi mdi-heart-outline mdi-24px"></div>
                   <div class="mdi mdi-playlist-plus mdi-24px"></div>
-                  <div class="more-info-button mdi mdi-chevron-down mdi-24px" onClick="toggleMoreInfo(event)" amplitude-song-index="0"></div>
+                  <div class="more-info-button mdi mdi-chevron-down mdi-24px" onClick="toggleMoreInfo(event)"></div>
                 </div>
               </div>
             </div>

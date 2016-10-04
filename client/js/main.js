@@ -51,8 +51,8 @@ Amplitude.init({
   "callbacks": {
       "before_play": "beforeNewTrackPlay",
       "after_next": "beforeNewTrackPlay",
-      "after_stop": "afterStopTrack" // TODO: how to trigger this?
-      // "after_init": TODO: same
+      "after_stop": "afterStopTrack", // TODO: how to trigger this?
+      "after_init": "afterInit" // TODO: same
       // "after_prev": "beforeNewTrackPlay"
     // after_play
     // before_stop
