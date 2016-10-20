@@ -44,45 +44,51 @@ var mockedSongs = [
   }
 ];
 
-// Init Amplitude
-Amplitude.init({
-  'songs' : mockedSongs,
-  "debug": true,
-  "callbacks": {
-    "before_play": "beforeNewTrackPlay",
-    "after_next": "beforeNewTrackPlay",
-    "after_stop": "afterStopTrack", // TODO: how to trigger this?
-    "after_init": "afterInit" // TODO: same
-    // "after_prev": "beforeNewTrackPlay"
-    // after_play
-    // before_stop
-    // before_next
-    // before_prev
-    // before_album_change
-    // after_album_change
+// fetch(url)
+// .then(function (response) {
+//   return response.json()
+// })
+// .then(function (songs) {
+  // Init Amplitude
+  Amplitude.init({
+    'songs' : mockedSongs,
+    "debug": true,
+    "callbacks": {
+      "before_play": "beforeNewTrackPlay",
+      "after_next": "beforeNewTrackPlay",
+      "after_stop": "afterStopTrack", // TODO: how to trigger this?
+      "after_init": "afterInit" // TODO: same
+      // "after_prev": "beforeNewTrackPlay"
+      // after_play
+      // before_stop
+      // before_next
+      // before_prev
+      // before_album_change
+      // after_album_change
+    }
+  });
+
+  // Init Wavesurfer
+  var wavesurfer = WaveSurfer.create({
+    container: '#waveform',
+    waveColor: '#97a7dc',
+    progressColor: 'purple',
+    height: '40'
+  });
+
+  wavesurfer.load(mockedSongs[0].url)
+  var currentWaveform = document.getElementById('waveform')
+  currentWaveform.className = mockedSongs[0].name
+
+  // Build playlist item elements
+  var playlistEl = document.getElementById('playlist');
+  var playlistItemTmp = getElementByClassName(playlistEl, 'playlist-item');
+
+  for (i = 0; i < mockedSongs.length; i++) {
+    playlistEl.appendChild(createPlaylistItem(i, mockedSongs[i]));
   }
-});
+// })
 
-// Init Wavesurfer
-var wavesurfer = WaveSurfer.create({
-  container: '#waveform',
-  waveColor: '#97a7dc',
-  progressColor: 'purple',
-  height: '40'
-});
-
-wavesurfer.load(mockedSongs[0].url)
-var currentWaveform = document.getElementById('waveform')
-currentWaveform.className = mockedSongs[0].name
-
-
-
-var playlistEl = document.getElementById('playlist');
-var playlistItemTmp = getElementByClassName(playlistEl, 'playlist-item');
-
-for (i = 0; i < mockedSongs.length; i++) {
-  playlistEl.appendChild(createPlaylistItem(i, mockedSongs[i]));
-}
 
 function createPlaylistItem(i, playListItem) {
   var playlistItemTmpCopy = playlistItemTmp.cloneNode(true);
