@@ -49,11 +49,11 @@ Amplitude.init({
   'songs' : mockedSongs,
   "debug": true,
   "callbacks": {
-      "before_play": "beforeNewTrackPlay",
-      "after_next": "beforeNewTrackPlay",
-      "after_stop": "afterStopTrack", // TODO: how to trigger this?
-      "after_init": "afterInit" // TODO: same
-      // "after_prev": "beforeNewTrackPlay"
+    "before_play": "beforeNewTrackPlay",
+    "after_next": "beforeNewTrackPlay",
+    "after_stop": "afterStopTrack", // TODO: how to trigger this?
+    "after_init": "afterInit" // TODO: same
+    // "after_prev": "beforeNewTrackPlay"
     // after_play
     // before_stop
     // before_next

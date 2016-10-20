@@ -58,6 +58,6 @@ gulp.task('default', function () {
       runSeq('buildCSS', 'reloadCSS');
   });
 
-    gulp.watch(['client/**/*.html'], ['reload']);
+  gulp.watch(['client/**/*.html'], ['reload']);
 
 });

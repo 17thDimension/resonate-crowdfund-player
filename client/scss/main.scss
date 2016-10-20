@@ -61,6 +61,10 @@ a {
 .clearfix { display: block; }
 /* close commented backslash hack */
 
+.hidden {
+  visibility: hidden;
+}
+
 @import 'mixins';
 @import 'footer';
 @import 'playlist';
