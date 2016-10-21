@@ -28,7 +28,7 @@ gulp.task('watch', function () {
   gulp.watch([paths.src + '/**/*.html'], ['reload']);
 });
 
-//gulp.task('serve', ['constants:local'], shell.task('ws'));
+//gulp.task('serve', ['constants:development'], shell.task('ws'));
 gulp.task('serve', shell.task('ws'));
 
 gulp.task('dev', ['serve', 'watch']);

@@ -7,6 +7,8 @@ var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename');
 var runSeq = require('run-sequence');
+var uglify = require('gulp-uglify');
+var minifyCSS = require('gulp-minify-css');
 
 var paths = gulp.paths;
 
@@ -19,7 +21,10 @@ gulp.task('buildCSS', function () {
 });
 
 gulp.task('buildJS', function () {
-    return gulp.src([paths.src + '/js/amplitude.js', paths.src + '/js/main.js', paths.src + '/js/**/*.js'])
+    return gulp.src([
+      paths.src + '/js/amplitude.js',
+      paths.src + '/js/main.js',
+      paths.src + '/js/**/*.js'])
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(concat('main.js'))

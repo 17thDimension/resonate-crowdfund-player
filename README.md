@@ -14,6 +14,9 @@ Make sure to have 'local-web-server' installed globally `npm install local-web-s
 
 
 TODOs:
+* fetch data from server, window.fetch not supported in Safari => use https://github.com/github/fetch instead?
+* gulp task to replace server url in development/production
+* production build task (replace url, minify-css and uglify)
 * ... button in the header ? Shuffle button
 		* shuffle button?
 * Links for modal - check if these are right!
