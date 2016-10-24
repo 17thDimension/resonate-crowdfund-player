@@ -159,7 +159,6 @@
 .playlist-item-info-container {
   display:inline-block;
   width: 351px;
-  float: left;
 }
 
 .playlist-item-info {
@@ -176,8 +175,6 @@
   font-size: 11px;
   line-height: 1.36;
   letter-spacing: 0.5px;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 .song-number {
@@ -192,6 +189,10 @@
   font-size: 15px;
   line-height: 1.33;
   letter-spacing: 0.1px;
+}
+
+.current-song-name, .current-artist-name, .song-name, .artist-name {
   overflow: hidden;
   white-space: nowrap;
+  text-overflow: ellipsis;
 }

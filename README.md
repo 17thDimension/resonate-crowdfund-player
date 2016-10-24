@@ -2,7 +2,7 @@
 
 Basic player widget for the Resonate homepage for duration of the crowd campaign, based on Amplitude.js.
 
-The client/ folder contains HTML, CSS and vanilla JS front-end code for the player which uses mocked songs for the moment.
+The src/ folder contains HTML, CSS and vanilla JS front-end code for the player which uses mocked songs for the moment.
 
 ### Development
 
@@ -10,19 +10,19 @@ Make sure to have 'local-web-server' installed globally `npm install local-web-s
 
 * Run `bower install && npm install`
 * Run `gulp` to build the js file and run the local web server
-* Open `http://localhost:8000/client/`
+* Open `http://localhost:8000/src/`
 
-### production
+### Production
 
+Source files are built into dist/ folder
 * Run `gulp build:production`
-Source files are built into `/dist/` folder
-
 
 TODOs:
-* gulp task to replace server url in development/production
+
 * ... button in the header ? Shuffle button
-		* shuffle button?
 * Links for modal - check if these are right!
 		* will ask peter
 * Colored waveform
 * Amplitude breaks in shuffle mode ???
+* fix materialdesignicons-webfont GET error in development (not so important for production)
+* gulp task to replace server url in development/production

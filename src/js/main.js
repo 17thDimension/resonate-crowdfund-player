@@ -1,4 +1,4 @@
-var mockedSongs = [
+/*var mockedSongs = [
   {
     name: "Song Name 1",
     artist: "Artist Name",
@@ -49,7 +49,7 @@ var mockedSongs = [
     cover_art_url: "./assets/cover/art1.jpg",
     duration: "262.68734693877553"
   }
-];
+];*/
 
 // Init Wavesurfer
 var wavesurfer = WaveSurfer.create({
@@ -64,6 +64,7 @@ fetch('https://trackserver.resonate.is/tracklist')
   return response.json();
 })
 .then(function (songs) {
+  console.log(songs);
   // Build playlist item elements
   var playlistEl = document.getElementById('playlist');
   var playlistItemTmp = getElementByClassName(playlistEl, 'playlist-item');

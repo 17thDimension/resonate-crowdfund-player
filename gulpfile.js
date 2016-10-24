@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 
 var paths = {
-  src: './client',
+  src: './src',
   vendors: './node_modules',
   dist: './dist'
 };
