@@ -12,10 +12,14 @@ Make sure to have 'local-web-server' installed globally `npm install local-web-s
 * Run `gulp` to build the js file and run the local web server
 * Open `http://localhost:8000/client/`
 
+### production
+
+* Run `gulp build:production`
+Source files are built into `/dist/` folder
+
 
 TODOs:
 * gulp task to replace server url in development/production
-* production build task (replace url, minify-css and uglify)
 * ... button in the header ? Shuffle button
 		* shuffle button?
 * Links for modal - check if these are right!

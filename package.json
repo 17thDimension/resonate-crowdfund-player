@@ -19,7 +19,10 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean-css": "^2.0.13",
     "gulp-concat": "^2.6.0",
+    "gulp-include": "^2.3.1",
     "gulp-jshint": "^2.0.1",
     "gulp-livereload": "^3.8.1",
     "gulp-minify-css": "^1.2.4",
@@ -33,7 +36,8 @@
     "jshint": "^2.9.3",
     "local-web-server": "^1.2.6",
     "require-dir": "^0.3.1",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^1.2.2",
+    "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
     "mdi": "^1.7.22",
