@@ -64,7 +64,6 @@ fetch('https://trackserver.resonate.is/tracklist')
   return response.json();
 })
 .then(function (songs) {
-  console.log(songs);
   // Build playlist item elements
   var playlistEl = document.getElementById('playlist');
   var playlistItemTmp = getElementByClassName(playlistEl, 'playlist-item');

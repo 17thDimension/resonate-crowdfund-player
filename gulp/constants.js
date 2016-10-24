@@ -6,7 +6,6 @@ var paths = gulp.paths;
 
 function cons(env) {
   var constants = gulp.src(paths.src + '/js/constants.js');
-  console.log(config[env].url);
   return constants
     .pipe(replace('/http:\/\/localhost:\d+/g', config[env].url))
     /*.pipe($.ngConfig('starter.config', {
