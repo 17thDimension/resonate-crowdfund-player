@@ -36,6 +36,7 @@
     "run-sequence": "^1.2.2"
   },
   "dependencies": {
-    "mdi": "^1.7.22"
+    "mdi": "^1.7.22",
+    "whatwg-fetch": "^1.0.0"
   }
 }
