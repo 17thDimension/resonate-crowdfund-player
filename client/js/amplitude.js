@@ -14,7 +14,7 @@ var Amplitude = (function () {
 
 	document.onreadystatechange = function () {
 		if( document.readyState == "complete" ){
-			privateInitializeEventHandlers();
+			//privateInitializeEventHandlers();
 		}
 	}
 
@@ -102,6 +102,7 @@ var Amplitude = (function () {
 				Set config songs.
 			*/
 			if( user_config.songs ){
+				privateInitializeEventHandlers();
 				if( user_config.songs.length != 0 ){
 					config.songs = user_config.songs;
 					ready = true;

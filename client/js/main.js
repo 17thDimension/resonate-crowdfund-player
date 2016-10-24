@@ -59,11 +59,19 @@ var wavesurfer = WaveSurfer.create({
   height: '40'
 });
 
-fetch('http://trackserver.resonate.is/tracklist')
+fetch('https://trackserver.resonate.is/tracklist')
 .then(function (response) {
   return response.json();
 })
 .then(function (songs) {
+  // Build playlist item elements
+  var playlistEl = document.getElementById('playlist');
+  var playlistItemTmp = getElementByClassName(playlistEl, 'playlist-item');
+
+  for (i = 0; i < songs.length; i++) {
+    playlistEl.appendChild(createPlaylistItem(playlistItemTmp, i, songs[i]));
+  }
+
   // Init Amplitude
   Amplitude.init({
     'songs' : songs,
@@ -86,14 +94,6 @@ fetch('http://trackserver.resonate.is/tracklist')
   wavesurfer.load(songs[0].url)
   var currentWaveform = document.getElementById('waveform')
   currentWaveform.className = songs[0].name
-
-  // Build playlist item elements
-  var playlistEl = document.getElementById('playlist');
-  var playlistItemTmp = getElementByClassName(playlistEl, 'playlist-item');
-
-  for (i = 0; i < songs.length; i++) {
-    playlistEl.appendChild(createPlaylistItem(playlistItemTmp, i, songs[i]));
-  }
 });
 
 
