@@ -59,7 +59,7 @@ var wavesurfer = WaveSurfer.create({
   height: '40'
 });
 
-fetch('http://trackserver.resonate.is/tracklist')
+fetch('https://trackserver.resonate.is/tracklist')
 .then(function (response) {
   return response.json();
 })
