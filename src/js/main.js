@@ -58,9 +58,14 @@ var wavesurfer = WaveSurfer.create({
   progressColor: 'purple',
   height: '40'
 });
-var _headers = new Headers()
-var _headers.append('X-Requested-With', 'XMLHttpRequest')
-fetch('https://trackserver.resonate.is/tracklist', { mode: 'cors', headers: _headers })
+
+var _headers = new Headers();
+_headers.append('X-Requested-With', 'XMLHttpRequest');
+
+fetch('https://trackserver.resonate.is/tracklist', {
+  mode: 'cors',
+  headers: _headers
+})
 .then(function (response) {
   return response.json();
 })
