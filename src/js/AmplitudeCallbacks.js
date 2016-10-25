@@ -14,6 +14,11 @@ function beforeNewTrackPlay() {
 
 	// super hacky
 	document.querySelector('.playlist-item[amplitude-song-index="'+Amplitude.getIndex()+'"]').className += " currently-playing";
+
+        // piwik event tracking
+        if (window._paq) {
+          window._paq.push([ 'trackEvent', 'Crowdfund_Player', 'Song_Play' ]);
+        }
 }
 
 function afterStopTrack() {
