@@ -19,10 +19,7 @@ Source files are built into dist/ folder
 
 TODOs:
 
-* ... button in the header ? Shuffle button
-* Links for modal - check if these are right!
-		* will ask peter
 * Colored waveform
 * Amplitude breaks in shuffle mode ???
 * fix materialdesignicons-webfont GET error in development (not so important for production)
-* gulp task to replace server url in development/production
+* Nice to have: gulp task to replace server url in development/production

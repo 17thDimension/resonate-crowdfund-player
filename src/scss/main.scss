@@ -16,8 +16,9 @@ body {
 #player-container {
   background-color: $medium-grey;
   width: 400px;
-  height: 500px;
+  height: auto;
   position: relative;
+  margin: 0 auto;
 }
 
 .playlist-item{
