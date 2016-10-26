@@ -59,6 +59,16 @@ var wavesurfer = WaveSurfer.create({
   height: '40'
 });
 
+function checkStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return response;
+  } else {
+    var error = new Error(response.statusText);
+    error.response = response;
+    throw error;
+  }
+}
+
 var _headers = new Headers();
 _headers.append('X-Requested-With', 'XMLHttpRequest');
 
@@ -66,41 +76,45 @@ fetch('https://trackserver.resonate.is/tracklist', {
   mode: 'cors',
   headers: _headers
 })
-.then(function (response) {
-  return response.json();
-})
-.then(function (songs) {
-  // Build playlist item elements
-  var playlistEl = document.getElementById('playlist');
-  var playlistItemTmp = getElementByClassName(playlistEl, 'playlist-item');
+  .then(checkStatus)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (songs) {
+    // Build playlist item elements
+    var playlistEl = document.getElementById('playlist');
+    var playlistItemTmp = getElementByClassName(playlistEl, 'playlist-item');
 
-  for (i = 0; i < songs.length; i++) {
-    playlistEl.appendChild(createPlaylistItem(playlistItemTmp, i, songs[i]));
-  }
-
-  // Init Amplitude
-  Amplitude.init({
-    'songs' : songs,
-    "debug": true,
-    "callbacks": {
-      "before_play": "beforeNewTrackPlay",
-      "after_next": "beforeNewTrackPlay",
-      "after_stop": "afterStopTrack", // TODO: how to trigger this?
-      // "after_init": "afterInit"
-      // "after_prev": "beforeNewTrackPlay"
-      // after_play
-      // before_stop
-      // before_next
-      // before_prev
-      // before_album_change
-      // after_album_change
+    for (i = 0; i < songs.length; i++) {
+      playlistEl.appendChild(createPlaylistItem(playlistItemTmp, i, songs[i]));
     }
-  });
 
-  wavesurfer.load(songs[0].url)
-  var currentWaveform = document.getElementById('waveform')
-  currentWaveform.className = songs[0].name
-});
+    // Init Amplitude
+    Amplitude.init({
+      "songs": songs,
+      "debug": true,
+      "callbacks": {
+        "before_play": "beforeNewTrackPlay",
+        "after_next": "beforeNewTrackPlay",
+        "after_stop": "afterStopTrack" // TODO: how to trigger this?
+        // "after_init": "afterInit"
+        // "after_prev": "beforeNewTrackPlay"
+        // after_play
+        // before_stop
+        // before_next
+        // before_prev
+        // before_album_change
+        // after_album_change
+      }
+    });
+
+    wavesurfer.load(songs[0].url);
+    var currentWaveform = document.getElementById('waveform');
+    currentWaveform.className = songs[0].name;
+  })
+  .catch(function (error) {
+    console.log('Tracklist request failed', error);
+  });
 
 
 function createPlaylistItem(playlistItemTmp, i, playListItem) {
