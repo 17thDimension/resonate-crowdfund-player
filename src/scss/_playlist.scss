@@ -24,13 +24,12 @@
   }
 
   &:hover {
-    .buy-button, .duration {
+    .buy-button{ //, .duration {
       display:none;
     }
     .standard-info-container {
       background-color: rgba(255, 255, 255, 0.2)
     }
-
     .action-icons {
       display: inline-block;
     }
@@ -68,7 +67,8 @@
 
     .song-meta {
       margin: 7px 0;
-      width: 185px;
+      width: 245px;
+      min-width: 245px;
     }
 
     .cover-container {
@@ -77,10 +77,15 @@
       width: 49px;
       height: 49px;
       float: left;
+      .darkener {
+        width: 49px;
+        height: 49px;
+      }
     }
 
     .duration {
       width: 60px;
+      min-width: 60px;
       opacity: 0.5;
       font-size: 11px;
       line-height: 46px;
@@ -182,6 +187,7 @@
   font-size: 15px;
   line-height: 45px;
   width: 45px;
+  min-width: 45px;
   letter-spacing: 0.1px;
   text-align: center;
 }

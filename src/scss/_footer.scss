@@ -9,9 +9,10 @@
   line-height: 35px;
   font-size: 15px;
   font-weight: bold;
-  &:hover {
-    cursor: pointer;
-  }
+  text-rendering: geometricPrecision;
+  // &:hover {
+  //   cursor: pointer;
+  // }
 }
 
 .fair-music-streaming {
@@ -20,6 +21,9 @@
   font-size: 12px;
   letter-spacing: 0.1px;
   text-align: right;
+  &:hover {
+    opacity: 0.8;
+  }
   a {
     color: $purple;
   }

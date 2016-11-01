@@ -21,6 +21,15 @@
       opacity: 0.6;
       text-align: center;
       padding-top: 7px;
+      &:hover {
+        opacity: 1;
+        &.amplitude-prev{
+          cursor: w-resize;
+        }
+        &.amplitude-next{
+          cursor: e-resize;
+        }
+      }
     }
   }
 
