@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/resonatecoop/resonate-crowdfund-player.png?label=ready&title=Ready)](https://waffle.io/resonatecoop/resonate-crowdfund-player)
 # Resonate Crowdfunding Player
 
 Basic player widget for the Resonate homepage for duration of the crowd campaign, based on Amplitude.js.
